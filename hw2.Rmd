@@ -1,0 +1,72 @@
+---
+title: "HW2"
+author: "Iden Watanabe"
+date: "February 14, 2018"
+output: html_document
+---
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/2_6.png)
+
+a) $P(1) = 0$ because it is impossible to roll a pair of fair dice and have the sum of them be 1.  The lowest possible is 2.
+
+b) $P(5) = 1/9$ because there are 4 possible outcomes that sum to 5 {(2, 3), (3, 2), (1, 4), (4, 1)}.  For each pair of outcomes, the odds are $1/36$ because the odds of rolling a 2 on the first die is $1/6$, and the odds of rolling a 3 on the second _given_ that we've already rolled a 2 is also $1/6$.  So to roll this particular combination, it's $1/6 \times 1/6 = 1/36$.  Then we add up all the disjointed events to get $1/36 + 1/36 + 1/36 + 1/36 = 4/36 = 1/9$.
+
+c) $P(12) = 1/36$.  There is only one set of events that lead to a sum of 12, which is (6, 6).  In this case, it doesn't matter which 6 is rolled first, the odds are still $1/6 \times 1/6 = 1/36$.
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/2_8.png)
+
+a) No, because it's said that 4.2% fall in _both_ categories, meaning they cannot be mutually exclusive.
+
+b) ![](D:/Grad School/2018 Spring/DATA 606/hw_img/venn.png)
+
+c) P(live below poverty line and speak English) = $.146 - .042 = .104$.  Looking at the Venn diagram, if the 4.2% is the overlap of below poverty line and speak a foreign language, then we want the overlap of below poverty line and speak English.  So we subtract the 4.2% to find which percentage of Americans living below the poverty line also speak English.
+
+d) P(live below poverty line *or* speak foreign language) = $.146 + .207 - .042 = .311$.  We essentially want the area of both circles, but have to make sure not to count their overlap twice, as laid out in the _General Addition Rule_.
+
+e) P(live above poverty line and speak English) = $1 - .311 = .689$.  This is essentially the area outside the Venn diagram.
+
+f) From the _Multiplication Rule for independent processes_: If A and B represent events from t wo different and independent processes, then the probability that both A and B occur can be calculated as the product of their separate probabilities: P(A and B) = P(A) \times P(B).  So we already have P(below poverty line and speak foreign language) = .042.  Then, for it to be independent, $.146 \times .207$ should equal to .042, but $.003  \neq .042$ so they are **not** independent.
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/2_20.png)
+
+a) P(MaleBlue) = $114/204$, P(FemaleBlue) = $108/204$.  P(MaleBlue or FemaleBlue) = $114/204 + 108/204 - 78/204 = 144/204 \approx .706$.
+
+b) P(MaleBlue and FemaleBlue) = $78/204 \approx .382$
+
+c) P(FemaleBlue | MaleBrown) = $19/54 \approx .352$; P(FemaleBlue | MaleGreen) = $11/36 \approx .306$
+
+d) Again, using the _Multiplication Rule_, we know that P(MaleBlue and FemaleBlue) \approx 0.382.  If we calculate P(MaleBlue) and P(FemaleBlue) = $(114/204) \times (108/204) \approx .296$.  Since $0.382 \neq .296$, they are **not** independent.
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/2_30.png)
+
+a) P(PaperbackFiction | Hardcover) = $28/95 \times 59/94 \approx .185$
+
+b) If the hardcover book happens to be fiction, then the probability is P(Hardcover | Fiction) = $72/95 \times 27/94 \approx .218$.  If the hardcover isn't a fiction book, then the probability is P(Hardcover | Fiction) = $72/95 x 28/94 \approx .226$
+
+c) So this won't have two answers, because even if the book chosen happens to be a hardcover fiction book, we're replacing it back onto the shelf.  Therefore, the probability is P(Hardcover | Fiction) = $72/95 x 28/95 \approx .223$
+
+d) In this situation, we're dealing with a sample of almost a hundred books.  One book shouldn't make too big of a difference.
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/2_38.png)
+
+a) Average revenue per passenger is simply $0 \times .54 + 25 \times .34 + (25 + 35) \times .12 = 15.7$ or \$15.70.
+
+The standard deviation is then $(0 - 15.7)^{2} \times .54 + (25 - 15.7)^{2} \times .34 + (60 - 15.7)^{2} \times .12 = 398.01$.
+
+$\sqrt{398.01} = 19.95$ or \$19.95.
+
+b) For 120 the airline can expect a revenue of $120 * 15.7 = 1884 \pm 19.95$.  This could also be calculated by $(120 \times 0 \times .54) + (120 \times 25 \times .34) + (120 \times 60 \times .12) = 1884 \pm 19.95$.  This should always be true, as the expected value is the expected value, and the only thing that would change is the number of passengers.
+
+The standard deviation I would expect to vary depending on the number of passengers, or the population.  So we can recalculate the SD as the variance times the number of passengers, or $398.01 \times 120 = 47761.2$, and then take the square root for the new SD $\sqrt{47761.2} = 218.54$
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/2_44.png)
+
+a) It seems unimodal, peaking at \$35,000 to \$49,999, but perhaps slightly right skewed as there are three values < 10% near the bottom compared to the two near the top.
+
+b) P(Earn less than \$50,000) = $.022 + .047 + .158 + .183 + .212 = .622$ or 62.2%.
+
+c) If we assume that being female and earning and income are independent, then P(Earn less than \$50,000 and female) = $.622 \times .41 = .255$
+
+d) If my assumption were true, then my answer above would equal 71.8%, however $.255 \neq .718$ therefore being a female and earning less than $50,000 **are** dependent.
+
+

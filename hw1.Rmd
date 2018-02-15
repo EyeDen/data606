@@ -1,0 +1,134 @@
+---
+title: "HW1"
+author: "Iden Watanabe"
+date: "February 7, 2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_8.png)  
+
+__(a) What does each row of the data matrix represent?__  
+_Each row represents a single UK resident._
+
+__(b) How many participants were included in the survey?__  
+_1691_
+
+__(c) Indicate whether each variable in the study is numerical or categorical.  If numerical, identify as continuous or discrete.  If categorical, indicate if the variable is ordinal.__  
+_sex is categorical and nominal._  
+_age is numerical and discrete._  
+_marital is categorical and nominal._  
+_grossIncome is categorical and ordinal._  
+_smoke is categorical and nominal._  
+_amtWeekends is categorical and ordinal._  
+_amtWeekdays is categorical and ordinal._  
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_10.png)
+
+__(a) Identify the population of interest and the sample in this study.__
+_Population of interest is children between the ages of 5 and 15._  
+_The sample is 150 such children._  
+
+__(b) Comment on whether or not the results of the study can be generalize to the population, and if the findings of the study can be used to establish causal relationships.__  
+_This seems to be an experiment, rather than an observational study.  Half were split into a control.  However we don't know if the sample was chosen randomly, nor if the control group had been picked randomly.  Furthermore, 150 seems like a very small sample size for such a broad population of children between the ages of 5 and 15.  I don't think it's enough to establish a causal relationship._  
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_28_a.png)  
+_The sample size seems a decent size.  Again, we know nothing about how the sample was randomized, and whether or not any control were present.  Another factor is that this is clearly an observational study, as opposed to an experimental study, which means we automatically shouldn't draw a causal relationship from this.  Furthermore, we can't tell if there are any confounding variables within the experiment, such as their occupation or other general level of fitness._  
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_28_b.png)  
+_Again, this seems to be an observational study, which is treacherous.  Moreover, we have different people doing the observations in parents and teachers, rather than having say a group of scientists so that they could calibrate their own ratings.  A teacher and student might have differing levels of "disruptive behavior", after all.  So we can infer an association, but not a causation._  
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_36.png)  
+__(a) What type of study is this?__  
+_It's a prospective study._  
+
+__(b) What are the treatment and control groups in this study?__  
+_The treatment group are those who are allowed to exercise.  The control does nothing._  
+
+__(c) Does this study make use of blocking?  If so, what is the blocking variable?__  
+_It seems to be blocked by ages, as a result of using stratified random sampling._  
+
+__(d) Does the study make use of blinding?__  
+_It does not, as those in the control group will clearly know they are the control because they won't be doing anything._  
+
+__(e) Comment on whether or not the results of the study can be used to establish a causal relationship between exercise and mental health, and indicate whether or not the conclusions can be generalized to the population at large.__  
+_Assuming that the sample is of a sufficient size, then yes I suppose some conclusions can be generalized.  Though this is a study, it's also being run as an experiment, so some causal relationships might be determined._  
+
+__(f) Suppose you are given the task of determining if this proposed study should get funding.  Would you have any reservations about the study proposal?__  
+_I think I would like another mental health exam to be conducted during the experiment.  I'm not sure there's any way to make this a blind experiment, perhaps by making both groups take some sort of placebo pill?_  
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_48.png)  
+```{r}
+exam.scores <- c(57, 66, 69, 71, 72, 73, 74, 77, 78, 79, 79, 81, 81, 82, 83, 83, 88, 89, 94)
+
+boxplot(exam.scores)
+```
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_50.png)  
+_a is unimodal, symmetric and matches to 2._  
+_b is multimodal and matches to 3._  
+_c is unimodal, right skewed and matches to 1._  
+
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_56.png)  
+__(a) Housing prices in a country where 25% of the houses cost below $350,000, 50% of the houses cost below $450,00, 75% of the houses cost below $1,000,000 and there are a meaningful number of houses that cost more than $6,000,000.__  
+_I'd expect this to be left skewed, because the number of houses at each IQR is roughly equal at 25% each, but the number at the final range seems to have a "meaningful" amount, which I take to mean as a lot.  Because it's skewed, I would say that the median and IQR should be used because it's more robust._  
+
+__(b) Housing prices in a country where 25% of the houses cost below $300,00, 50% of the houses cost below $600,00, 75% of the houses cost below $900,000 and very few houses that cost more than $1,200,000__  
+_This is right skewed as the graph should look like the previous one, except it will have a sudden dip and tail for the final quarter.  Again, because it's skewed, I would suggest the median and IQR._  
+
+__(c) Number of alcoholic drinks consumed by college students in a given week.  Assume that most of these students don't drink since they are under 21 years old, and only a few drink excessively.__
+_I would expect this to be right skewed, as the description says most of the students should report 0, and very few will report numerous drinks.  As such this should use the median and IQR._  
+
+__(d) Annual salaries of the employees at a Fortune 500 company where only a few high level executives earn much higher salaries than all the other employees.__  
+_I expect this to be like the MLB salary graph, so it will be right skewed.  Because of the skew, it should use the median and IQR._  
+
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_70.png)  
+__(a) Based on the mosaic plot, is survival independent on whether or not the patient got a transplant?  Explain your reasoning.__  
+_I don't think survival is dependent.  There is a noticable increase in both the number and proportion of survivors between the control and treatment._
+
+__(b) What do the box plots below suggest about the efficacy (effectiveness) of the heart transplant treatment?__  
+_Treatment seems to increase the survival time over the control.  The median is higher, and the range of values within the Q1 and Q3 of treatment is higher than the range of control._
+
+__(c) What proportion of patients in the treatment group and what proportion of patients in the control group died?__
+```{r}
+library(openintro)
+data("heartTr")
+
+control <- subset(heartTr, transplant == "control")
+dead.control <- table(control$survived == "dead")
+dead.control
+
+treatment <- subset(heartTr, transplant = "treatment")
+dead.treatment <- table(treatment$survived == "dead")
+dead.treatment
+
+prop.control <- 30/34
+prop.treatment <- 75/103
+
+prop.control
+prop.treatment
+```
+
+__(d) One approach for investigating whether or not the treatment is effective is to use a randomization technique.__  
+__i. What are the claims being tested?__  
+_Whether a heart transplant helps survivability in patients._  
+
+__ii. The paragraph below describes the set up for such an approach, if we were to do it without using statistical software.  Fill in the blanks with a number or phrase, whichever is appropriate.__  
+```{r}
+alive <- table(heartTr$survived == "alive")
+dead <- table(heartTr$surived == "dead")
+treatment <- table(heartTr$transplant == "treatment")
+control <- table(heartTr$transplant == "control")
+
+alive
+dead
+treatment
+control
+```
+_We write [alive] on_ __28__ _cards representing patients who were alive at the end of the study, and [dead] on_ __75__ _cards representing patients who were not.  Then, we shuffle these cards and split them into two groups: one group of size_ __69__ _representing treatment, and another group of size_ __34__ _representing control.  We calculate the difference between the proportion of [dead] cards in the treatment and control groups (treatment - control) and record this value.  We repeat this 100 times to build a distribution centered at_ __0__ _.  Lastly, we calculate the fraction of simulations where the simulated differences in proportion are_ __0__ _.  If this fraction is low, we conclude that it is unlikely to have observed such an outcome by chance and that the null hypothesis should be rejected in favor of the alternative._  
+
+__iii. What do the simulation results shown below suggest about the effectiveness of the transplant program?__
+![](D:/Grad School/2018 Spring/DATA 606/hw_img/1_70_chart.png)  
+_If we're simulating treatment - control for dead, then the greater amount of negative proportions would suggest that treatment has an affect on survivability.  So we reject the independence model._
